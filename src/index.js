@@ -22,5 +22,5 @@ function onLoadMore() {
 
 function renderCard(data) {
   const doCard = cardData(data);
-  refs.gallery.innerHTML = doCard;
+  refs.gallery.insertAdjacentHTML('beforeend', doCard);
 }
