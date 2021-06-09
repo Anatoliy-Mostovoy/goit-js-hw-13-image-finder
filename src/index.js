@@ -14,12 +14,14 @@ function onSearch(event) {
   newsApiService.query = event.currentTarget.elements.query.value.trim();
   newsApiService.resetPage();
   newsApiService.fetchArticles().then(renderCard);
-
   clearGallery();
 }
 
 function onLoadMore() {
-  newsApiService.fetchArticles().then(renderCard, scrollImg());
+  newsApiService.fetchArticles().then(data => {
+    renderCard(data);
+    scrollImg();
+  });
 }
 
 function renderCard(data) {
@@ -28,9 +30,9 @@ function renderCard(data) {
 }
 
 function scrollImg() {
-  refs.gallery.scrollIntoView({
-    block: 'end',
+  refs.moreBtn.scrollIntoView({
     behavior: 'smooth',
+    block: 'end',
   });
 }
 
