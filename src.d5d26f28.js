@@ -13,4 +13,4 @@ var e,t=arguments[3];!function(t,r){"object"==typeof exports&&"object"==typeof m
 },{}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss");var e=require("./js/variables.js"),r=n(require("./templates/card")),t=n(require("./js/apiService"));function n(e){return e&&e.__esModule?e:{default:e}}e.refs.searchForm.addEventListener("submit",i),e.refs.moreBtn.addEventListener("click",c);const s=new t.default;function i(e){e.preventDefault(),s.query=e.currentTarget.elements.query.value.trim(),s.resetPage(),s.fetchArticles().then(a),l()}function c(){s.fetchArticles().then(a).then(u)}function a(t){const n=(0,r.default)(t);e.refs.gallery.insertAdjacentHTML("beforeend",n)}function u(){e.refs.moreBtn.scrollIntoView({behavior:"smooth",block:"end"})}function l(){e.refs.gallery.innerHTML=""}
 },{"./sass/main.scss":"clu1","./js/variables.js":"u9EY","./templates/card":"BqeE","./js/apiService":"eQwa"}]},{},["Focm"], null)
-//# sourceMappingURL=/goit-js-hw-13-image-finder/src.bdfa099f.js.map
+//# sourceMappingURL=/goit-js-hw-13-image-finder/src.d5d26f28.js.map
