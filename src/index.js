@@ -14,12 +14,12 @@ function onSearch(event) {
   newsApiService.query = event.currentTarget.elements.query.value.trim();
   newsApiService.resetPage();
   newsApiService.fetchArticles().then(renderCard);
-  refs.gallery.innerHTML = '';
+
+  clearGallery();
 }
 
 function onLoadMore() {
-  newsApiService.fetchArticles().then(renderCard);
-  scrollImg();
+  newsApiService.fetchArticles().then(renderCard, scrollImg());
 }
 
 function renderCard(data) {
@@ -28,8 +28,12 @@ function renderCard(data) {
 }
 
 function scrollImg() {
-  refs.moreBtn.scrollIntoView({
-    behavior: 'smooth',
+  refs.gallery.scrollIntoView({
     block: 'end',
+    behavior: 'smooth',
   });
+}
+
+function clearGallery() {
+  refs.gallery.innerHTML = '';
 }
