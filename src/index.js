@@ -18,10 +18,8 @@ function onSearch(event) {
 }
 
 function onLoadMore() {
-  newsApiService.fetchArticles().then(data => {
-    renderCard(data);
-    scrollImg();
-  });
+  newsApiService.fetchArticles().then(renderCard).then(scrollImg);
+  // scrollImg();
 }
 
 function renderCard(data) {
